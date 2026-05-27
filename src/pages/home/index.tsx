@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import {Social } from '../../components/social'
-import {FaInstagram, FaYoutube, FaFacebook} from 'react-icons/fa'
+import {FaInstagram, FaLinkedin, FaTelegram} from 'react-icons/fa'
 import {db} from '../../services/firebaseConnection'
 import {
     getDocs,
@@ -22,8 +22,8 @@ interface LinkProps{
 }
 
 interface SocialLinksProps{
-    facebook: string;
-    youtube: string;
+    telegram: string;
+    linkedin: string;
     instagram: string;
 }
 
@@ -69,9 +69,9 @@ export function Home(){
             .then((snapshot) => {
                 if(snapshot.data() !== undefined){
                  setSocialLinks({
-                    facebook: snapshot.data()?.facebook,
+                    telegram: snapshot.data()?.telegram,
                     instagram: snapshot.data()?.instagram,
-                    youtube: snapshot.data()?.youtube,
+                    linkedin: snapshot.data()?.linkedin,
                 })  
             }
         })
@@ -101,16 +101,16 @@ export function Home(){
 
                 {socialLinks && Object.keys(socialLinks).length > 0 && (
                     <footer className="flex justify-center gap-3 my-4">
-                        <Social url={socialLinks?.facebook}>
-                            <FaFacebook size={35} color='#FFF'/>
+                        <Social url={socialLinks?.telegram}>
+                            <FaTelegram size={35} color='#FFF'/>
                         </Social>
 
                         <Social url={socialLinks?.instagram}>
                             <FaInstagram size={35} color='#FFF'/>
                         </Social>
 
-                        <Social url={socialLinks?.youtube}>
-                            <FaYoutube size={35} color='#FFF'/>
+                        <Social url={socialLinks?.linkedin}>
+                            <FaLinkedin size={35} color='#FFF'/>
                         </Social>
                     </footer>
                 )}

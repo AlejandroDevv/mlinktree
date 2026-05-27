@@ -12,9 +12,9 @@ import{
 
 
 export function Networks(){
-    const [facebook,setFacebook] = useState("")
+    const [telegram,setTelegram] = useState("")
     const [instagram,setInstagram] = useState("")
-    const [youtube,setYoutube] = useState("")
+    const [linkedin,setLinkedin] = useState("")
 
     useEffect(() => {
         function loadLinks(){
@@ -22,9 +22,9 @@ export function Networks(){
             getDoc(docRef)
             .then((snapshot) => {
                 if(snapshot.data() !== undefined){
-                    setFacebook(snapshot.data()?.facebook)
+                    setTelegram(snapshot.data()?.telegram)
                     setInstagram(snapshot.data()?.instagram)
-                    setYoutube(snapshot.data()?.youtube)
+                    setLinkedin(snapshot.data()?.linkedin)
                 }
             })
         }
@@ -37,9 +37,9 @@ export function Networks(){
         e.preventDefault();
 
         setDoc(doc(db, "social", "link"),{
-            facebook: facebook,
+            telegram: telegram,
             instagram: instagram,
-            youtube: youtube
+            linkedin: linkedin
         })
         .then(()=>{
             console.log("CADASTRADO COM SUCESSOOO")
@@ -57,12 +57,12 @@ export function Networks(){
             <h1 className="text-white text-2xl font-medium mt-8 mb-4"> Minhas redes sociais</h1>
             
             <form className="flex flex-col max-w-xl w-full" onSubmit={handleRegister}>
-                <label className="text-white font-medium mt-2 mb-2"> Link do facebook</label>
+                <label className="text-white font-medium mt-2 mb-2"> Link do Telegram</label>
                 <Input
                    type="url"
-                   placeholder="Digite a url do facebook..."
-                   value={facebook}
-                   onChange={(e) => setFacebook(e.target.value)} 
+                   placeholder="Digite a url do link..."
+                   value={telegram}
+                   onChange={(e) => setTelegram(e.target.value)} 
                 />
 
                 <label className="text-white font-medium mt-2 mb-2"> Link do Instagram</label>
@@ -73,17 +73,17 @@ export function Networks(){
                    onChange={(e) => setInstagram(e.target.value)} 
                 />
 
-                <label className="text-white font-medium mt-2 mb-2"> Link do Youtube</label>
+                <label className="text-white font-medium mt-2 mb-2"> Link do Linkedin</label>
                 <Input
                    type="url"
-                   placeholder="Digite a url do youtube..."
-                   value={youtube}
-                   onChange={(e) => setYoutube(e.target.value)} 
+                   placeholder="Digite a url do Linkedin..."
+                   value={linkedin}
+                   onChange={(e) => setLinkedin(e.target.value)} 
                 />
 
                 <button
                 type='submit'
-                className='text-white bg-blue-600 h-9 rounded-md items-center justify-center felx mb-7 font-medium'
+                className='text-white bg-blue-600 h-9 rounded-md items-center justify-center felx mb-7 font-medium cursor-pointer'
                 >
                     Salvar Links
                 </button>
