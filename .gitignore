@@ -26,5 +26,4 @@ dist-ssr
 *.sln
 *.sw?
 
-/services
-firebaseConnection.ts
+src/services/firebaseConnection.ts
