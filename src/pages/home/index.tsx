@@ -10,6 +10,9 @@ import {
     doc,
     getDoc
 } from 'firebase/firestore'
+import perfilImg from '../../assets/eu-dev-tech.jpg'
+import background from '../../assets/fundo-tech.jpg'
+
 
 
 
@@ -81,40 +84,51 @@ export function Home(){
 
     }, [])
     return(
-        <div className="flex flex-col w-full py-4 items-center justify-center">
-            <h1 className="md:text-4xl text-3xl font-bold text-white mt-20">Alejandro Oliveira</h1>
-            <span className="text-gray-50 mb-5 mt-3">Veja meus links 👇</span>
+        <div className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center"
+             style={{
+                backgroundImage: `url(${background})`
+             }}              
+        >
+            <div className='min-h-screen w-full backdrop-blur-sm bg-black/10 flex flex-col items-center'>
+                <img
+                src={perfilImg}
+                alt='foto perfil'
+                className='w-28 h-28 rounded-full object-cove mb-4 mt-20'
+                />
+                <h1 className="md:text-4xl text-3xl font-bold text-white">Alejandro Oliveira</h1>
+                <span className="text-gray-50 mb-5 mt-3">Veja meus links 👇</span>
 
-            <main className="flex flex-col w-11/12 max-w-xl text-center">
-                {links.map((link) => (
-                    <section 
-                    style={{ backgroundColor: link.bg}}
-                    key={link.id}
-                    className="bg-white mb-4 w-full py-2 rounded-lg select-none transition-transform hover:scale-105 cursor-pointer">
-                    <a href={link.url} target='_blank'>
-                        <p className="text-base md:text-lg" style={{ color: link.color}}>
-                            {link.name}
-                        </p>
-                    </a>
-                </section>
-                ))}
+                <main className="flex flex-col w-11/12 max-w-xl text-center">
+                    {links.map((link) => (
+                        <section 
+                        style={{ backgroundColor: link.bg}}
+                        key={link.id}
+                        className="bg-white mb-4 w-full py-2 rounded-lg select-none transition-transform hover:scale-105 cursor-pointer">
+                        <a href={link.url} target='_blank'>
+                            <p className="text-base md:text-lg" style={{ color: link.color}}>
+                                {link.name}
+                            </p>
+                        </a>
+                    </section>
+                    ))}
 
-                {socialLinks && Object.keys(socialLinks).length > 0 && (
-                    <footer className="flex justify-center gap-3 my-4">
-                        <Social url={socialLinks?.telegram}>
-                            <FaTelegram size={35} color='#FFF'/>
-                        </Social>
+                    {socialLinks && Object.keys(socialLinks).length > 0 && (
+                        <footer className="flex justify-center gap-3 my-4">
+                            <Social url={socialLinks?.telegram}>
+                                <FaTelegram size={35} color='#FFF'/>
+                            </Social>
 
-                        <Social url={socialLinks?.instagram}>
-                            <FaInstagram size={35} color='#FFF'/>
-                        </Social>
+                            <Social url={socialLinks?.instagram}>
+                                <FaInstagram size={35} color='#FFF'/>
+                            </Social>
 
-                        <Social url={socialLinks?.linkedin}>
-                            <FaLinkedin size={35} color='#FFF'/>
-                        </Social>
-                    </footer>
-                )}
-            </main>
+                            <Social url={socialLinks?.linkedin}>
+                                <FaLinkedin size={35} color='#FFF'/>
+                            </Social>
+                        </footer>
+                        )}
+                    </main>
+                </div>
         </div>
     )
 }

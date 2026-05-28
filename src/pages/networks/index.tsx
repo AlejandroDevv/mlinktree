@@ -1,7 +1,7 @@
 import {useEffect, useState, type FormEvent} from 'react'
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-
+import background from '../../assets/fundo-tech.jpg'
 import{db} from '../../services/firebaseConnection'
 import{
     setDoc,
@@ -51,43 +51,52 @@ export function Networks(){
     }
 
     return(
-        <div className=" flex items-center flex-col min-h-screen pb-7 px-2">
-            <Header/>
+        <div className=" min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center"
+             style={{
+                backgroundImage: `url(${background})`
+             }}    
+            >
 
-            <h1 className="text-white text-2xl font-medium mt-8 mb-4"> Minhas redes sociais</h1>
-            
-            <form className="flex flex-col max-w-xl w-full" onSubmit={handleRegister}>
-                <label className="text-white font-medium mt-2 mb-2"> Link do Telegram</label>
-                <Input
-                   type="url"
-                   placeholder="Digite a url do link..."
-                   value={telegram}
-                   onChange={(e) => setTelegram(e.target.value)} 
-                />
+            <div className='min-h-screen w-full backdrop-blur-sm bg-black/10 flex flex-col items-center'>
+                    <Header/>
 
-                <label className="text-white font-medium mt-2 mb-2"> Link do Instagram</label>
-                <Input
-                   type="url"
-                   placeholder="Digite a url do instagram..."
-                   value={instagram}
-                   onChange={(e) => setInstagram(e.target.value)} 
-                />
+                    
 
-                <label className="text-white font-medium mt-2 mb-2"> Link do Linkedin</label>
-                <Input
-                   type="url"
-                   placeholder="Digite a url do Linkedin..."
-                   value={linkedin}
-                   onChange={(e) => setLinkedin(e.target.value)} 
-                />
+                    <h1 className="text-white text-2xl font-medium mt-8 mb-4"> Minhas redes sociais</h1>
+                    
+                    <form className="flex flex-col max-w-xl w-full" onSubmit={handleRegister}>
+                        <label className="text-white font-medium mt-2 mb-2"> Link do Telegram</label>
+                        <Input
+                        type="url"
+                        placeholder="Digite a url do link..."
+                        value={telegram}
+                        onChange={(e) => setTelegram(e.target.value)} 
+                        />
 
-                <button
-                type='submit'
-                className='text-white bg-blue-600 h-9 rounded-md items-center justify-center felx mb-7 font-medium cursor-pointer'
-                >
-                    Salvar Links
-                </button>
-            </form>
+                        <label className="text-white font-medium mt-2 mb-2"> Link do Instagram</label>
+                        <Input
+                        type="url"
+                        placeholder="Digite a url do instagram..."
+                        value={instagram}
+                        onChange={(e) => setInstagram(e.target.value)} 
+                        />
+
+                        <label className="text-white font-medium mt-2 mb-2"> Link do Linkedin</label>
+                        <Input
+                        type="url"
+                        placeholder="Digite a url do Linkedin..."
+                        value={linkedin}
+                        onChange={(e) => setLinkedin(e.target.value)} 
+                        />
+
+                        <button
+                        type='submit'
+                        className='text-white bg-blue-600 h-9 rounded-md items-center justify-center felx mb-7 font-medium cursor-pointer'
+                        >
+                            Salvar Links
+                        </button>
+                    </form>
+            </div>        
         </div>
     )
 }
