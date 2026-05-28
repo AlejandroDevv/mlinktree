@@ -3,7 +3,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import background from '../../assets/fundo-tech.jpg'
 import { FiTrash } from 'react-icons/fi'
-import {db} from '../../services/firebaseConnection'
+import {db} from '../../services/firebase'
 import{
     addDoc,
     collection,

@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {Input} from '../../components/Input'
 import { useState, type FormEvent } from "react";
 
-import { auth } from '../../services/firebaseConnection'
+import { auth } from '../../services/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import background from '../../assets/fundo-tech.jpg'
 

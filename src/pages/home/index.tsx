@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import {Social } from '../../components/social'
 import {FaInstagram, FaLinkedin, FaTelegram} from 'react-icons/fa'
-import {db} from '../../services/firebaseConnection'
+import {db} from '../../services/firebase'
 import {
     getDocs,
     collection,

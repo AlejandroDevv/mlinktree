@@ -2,7 +2,7 @@ import {useEffect, useState, type FormEvent} from 'react'
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import background from '../../assets/fundo-tech.jpg'
-import{db} from '../../services/firebaseConnection'
+import{db} from '../../services/firebase'
 import{
     setDoc,
     doc,
