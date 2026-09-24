@@ -1,75 +1,62 @@
-# React + TypeScript + Vite
+# 🔗 mLinktree
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web desenvolvida com React e TypeScript para criação de uma página personalizada de links.
 
-Currently, two official plugins are available:
+O projeto permite organizar diferentes links em uma única página, oferecendo uma forma simples e prática de compartilhar conteúdos e redes sociais.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologias utilizadas
 
-## React Compiler
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Firebase
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+ ## ✨ Funcionalidades
 
-Note: This will impact Vite dev & build performances.
+- 🔗 Criação e gerenciamento de links
+- ➕ Adição de novos links
+- 🗑️ Remoção de links
+- 🔐 Autenticação de usuário
+- ☁️ Armazenamento de dados com Firebase
+- 📱 Interface responsiva
 
-## Expanding the ESLint configuration
+  ## 🌐 Demonstração
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔗 [Acessar aplicação](https://mlinktree.vercel.app/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📸 Preview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+<img width="1920" height="1025" alt="Captura de tela 2026-09-24 110134" src="https://github.com/user-attachments/assets/925be838-7134-4bf5-9e10-d6831a2529c0" />
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚙️ Como executar o projeto
+
+### Pré-requisitos
+
+- Node.js instalado
+- Git instalado
+
+### Instalação
+
+```bash
+git clone https://github.com/AlejandroDevv/mlinktree.git
+cd mlinktree
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Executar o projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Após iniciar o servidor, acesse o endereço indicado pelo Vite no terminal.
+
+## 👨‍💻 Autor
+
+**Alejandro Oliveira**
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/alejandro-oliveira/)
+- 🐙 [GitHub](https://github.com/AlejandroDevv)
+
+
